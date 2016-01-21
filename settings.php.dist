@@ -1,0 +1,11 @@
+<?php
+/********* SETTINGS START *********/
+// Zdrojova adresa upozorneni.
+define("CERTMON_EMAIL", "CertMonBot <certbot@something.org>");
+
+// Kam poslat reply-to mailu z certbota. Dodrzovat format!
+define("CERTMON_ADMIN", "someone <someone@something.cz>");
+
+// Jak brzo pred expirace poslat maily (kolik dni).
+define("CERTMON_SEND_BEFORE", 7);
+/********** SETTINGS END **********/
