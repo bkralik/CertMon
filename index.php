@@ -53,7 +53,7 @@ $elapsed = round(($end - $start)*10)/10;
         <tr>
           <th>Server</th>
           <th>Služba (port)</th>
-          <th>Jméno certifikátu</th>
+          <th data-toggle="tooltip" data-placement="bottom" data-container="body" title="Obsah pole CN= jména certifikátu. Pro podrobnosti najeďte na buňku tabulky.">Jméno certifikátu <span style="color: blue;">?</span></th>
           <th>Hash</th>
           <th>Platnost od</th>
           <th>Platnost do</th>
@@ -67,7 +67,7 @@ $elapsed = round(($end - $start)*10)/10;
               <?php
               if($test["test"]["status"] == 0) {
               ?>
-                <td><?php echo($test["test"]["cert"]["name"]); ?></td>
+                <td data-toggle="tooltip" data-placement="left" data-container="body" title="<?php echo($test["test"]["cert"]["name"]); ?>"><?php echo($test["test"]["cert"]["short_name"]); ?></td>
                 <td><?php echo($test["test"]["cert"]["hash"]); ?></td>
                 <td><?php echo(date("j. n. Y", $test["test"]["cert"]["validFrom_time_t"])); ?></td>
                 <td><?php echo(date("j. n. Y", $test["test"]["cert"]["validTo_time_t"])); ?></td>
@@ -90,5 +90,10 @@ $elapsed = round(($end - $start)*10)/10;
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    })
+    </script>
   </body>
 </html>

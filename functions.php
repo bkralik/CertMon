@@ -90,6 +90,12 @@ function getServerInfo($ip, $port) {
     return($out);
   }
   
+  if(preg_match('/\/CN=(.+?)(\/|\z)/', $cert_parsed["name"], $name_matches)) {
+    $cert_parsed["short_name"] = $name_matches[1];
+  } else {
+    $cert_parsed["short_name"] = substr($cert_parsed["name"], 0, 50);
+  }
+  
   $out["status"] = 0;
   $out["cert"] = $cert_parsed;
   return($out);       
