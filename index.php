@@ -82,7 +82,7 @@ $elapsed = round(($end - $start)*10)/10;
       </table>
       
       <hr>
-      Vygenerováno v <?php echo(date("G:i j. n. Y")); ?> za <?php echo($elapsed); ?> sekund. Napsal <a href="mailto:bkralik@hkfree.org">bkralik</a> v roce 2016.
+      Vygenerováno v <?php echo(date("G:i j. n. Y")); ?> za <?php echo($elapsed); ?> sekund. Napsal <a href="mailto:bkralik@hkfree.org">bkralik</a> v roce 2016. Zdrojové kódy dostupné na <a href="https://github.com/bkralik/CertMon">GitHubu</a>.
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
