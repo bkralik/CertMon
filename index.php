@@ -7,7 +7,7 @@ $servers = getListFromCSV();
 
 $tests = array();
 foreach($servers as $server) {
-  $test = getServerInfo($server[0], $server[2]);
+  $test = getServerInfo($server[0], $server[2], $server[1]);
   
   $time = time();
   if($test["status"] != 0) {

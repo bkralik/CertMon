@@ -44,10 +44,16 @@ function getListFromCSV() {
   return($out);
 }
 
-function getServerInfo($ip, $port) {
+function getServerInfo($ip, $port, $protocol = "https") {
 
   $iport = escapeshellarg($ip . ':' . $port);
-  $shcmd = 'echo -n | timeout 2 openssl s_client -connect '.$iport;
+
+  if($protocol == "ftps") {
+    $shcmd = 'echo -n | timeout 2 openssl s_client -starttls ftp -connect '.$iport;
+  } else {
+    $shcmd = 'echo -n | timeout 2 openssl s_client -connect '.$iport;
+  }
+
         
   $dspecs = array(
     1 => array('pipe', 'w'),
